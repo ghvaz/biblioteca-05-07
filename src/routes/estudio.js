@@ -17,18 +17,18 @@ rota.get("/:procuraID", (rq,rs)=>{
 })
 
 rota.put("/:id", (rq,rs)=>{
-    let atualizo/*?*/ = ctrl.atl(rq.params.id, rq.body) 
-    rs.status(atualizo)
+    let atualizo = ctrl.atl(rq.params.id, rq.body) 
+    rs.status(atualizo).json()
 })
 
 rota.post("/", (rq,rs)=> {
-    let crio/*?*/ = ctrl.adic(rq.body)
-    rs.status(crio)
+    let crio = ctrl.adic(rq.body)
+    rs.status(crio).json()
 })
 
 rota.delete("/:id", (rq,rs)=> {
-    let deleto/*?*/ = ctrl.del(rq.params.id)
-    rs.status(deleto)
+    let deleto = ctrl.del(rq.params.id)
+    rs.status(deleto).json()
 })
 
 module.exports = rota

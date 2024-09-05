@@ -1,4 +1,3 @@
-const estudio = require("../models/estudio.js")
 const model = require("../models/estudio.js")
 
 let db = [{id: 1, 
@@ -12,9 +11,9 @@ module.exports = {
         let nov = model(body)
         if(nov){
             db.push(nov)
-
             return 201
-        }else{ return 418 }
+        }else{ 
+            return 418 }
     },
 
     mstT: () => {return db},
@@ -31,7 +30,7 @@ module.exports = {
     atl: (Qid, body) => {
         let posicao = db.findIndex((estudio)=> estudio.id == Qid) 
         if(posicao != (-1)){
-            let nov = model(body)
+            let nov = model(body, Qid)
             if(nov){
                 db[posicao] = nov
 
