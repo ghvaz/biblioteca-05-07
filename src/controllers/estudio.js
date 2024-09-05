@@ -2,8 +2,8 @@ const model = require("../models/estudio.js")
 
 let db = [{id: 1, 
     nome: "estudio Genrico numero 1", 
-    criado_em: 2000, 
-    atualizado_em: 2020
+    criado_em: "01-01-2000", 
+    atualizado_em: "01-01-2020"
 }]
 
 module.exports = {

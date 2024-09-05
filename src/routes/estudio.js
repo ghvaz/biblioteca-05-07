@@ -1,9 +1,10 @@
 const express = require("express")
 const rota = express.Router()
+const criacao = require("../middleware/dataCriacao.js")
 
 const ctrl = require("../controllers/estudio.js")
 
-rota.get("/", (rq, rs) =>{
+rota.get("/", (rq, rs) => {
     rs.json(ctrl.mstT())
 })
 
@@ -21,7 +22,7 @@ rota.put("/:id", (rq,rs)=>{
     rs.status(atualizo).json()
 })
 
-rota.post("/", (rq,rs)=> {
+rota.post("/", criacao,(rq,rs)=> {
     let crio = ctrl.adic(rq.body)
     rs.status(crio).json()
 })
